@@ -6,24 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swipe Scroll</title>
     <style>
-        body,
-        html {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
             overflow: hidden;
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
             width: 100vw;
-            scroll-snap-type: y mandatory;
+            height: 100vh;
             overflow-y: scroll;
+            scroll-snap-type: y mandatory;
         }
 
         .section {
-            height: 100vh;
+            min-height: 100vh;
             width: 100vw;
             display: flex;
             align-items: center;
