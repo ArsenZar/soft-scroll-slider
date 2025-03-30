@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe Scroll</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+        }
+
+        .section {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            scroll-snap-align: start;
+        }
+
+        .section:nth-child(odd) {
+            background: lightblue;
+        }
+
+        .section:nth-child(even) {
+            background: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">Секція 1</div>
+        <div class="section">Секція 2</div>
+        <div class="section">Секція 3</div>
+    </div>
+</body>
+
+</html>
