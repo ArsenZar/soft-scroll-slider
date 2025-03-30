@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe Sections</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            position: absolute;
+            top: 100vh;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .section:nth-child(1) {
+            background: lightblue;
+            top: 0;
+        }
+
+        .section:nth-child(2) {
+            background: lightcoral;
+        }
+
+        .section:nth-child(3) {
+            background: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">Секція 1</div>
+        <div class="section">Секція 2</div>
+        <div class="section">Секція 3</div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const sections = document.querySelectorAll('.section');
+        const totalSections = sections.length;
+
+        let startY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            startY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            let endY = e.changedTouches[0].clientY;
+            if (startY > endY + 50 && currentIndex < totalSections - 1) {
+                // Свайп вверх (перехід до наступного блоку)
+                currentIndex++;
+            } else if (startY < endY - 50 && currentIndex > 0) {
+                // Свайп вниз (перехід до попереднього блоку)
+                currentIndex--;
+            }
+            updateSections();
+        });
+
+        function updateSections() {
+            sections.forEach((section, index) => {
+                let offset = (index - currentIndex) * 100;
+                section.style.transform = `translateY(${offset}vh)`;
+            });
+        }
+    </script>
+</body>
+
+</html>
