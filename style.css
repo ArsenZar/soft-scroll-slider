@@ -34,3 +34,9 @@ nav a {
     list-style-type: none;
     margin: 10px;
 }
+.minds{
+    font-size: 1.5vh;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: aquamarine;
+    padding: 5px;
+}
