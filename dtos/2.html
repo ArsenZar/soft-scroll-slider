@@ -34,8 +34,10 @@
             justify-content: center;
             font-size: 2rem;
             position: absolute;
-            top: 100vh;
+            top: 0vh;
+            left: 0vh;
             transition: transform 0.5s ease-in-out;
+            z-index: 100;
         }
 
         .section:nth-child(1) {
@@ -50,6 +52,15 @@
         .section:nth-child(3) {
             background: lightgreen;
         }
+        .s1{
+            z-index: 100;
+        }
+        .s2{
+            z-index: 99;
+        }
+        .s3{
+            z-index: 98;
+        }
     </style>
 </head>
 
@@ -60,40 +71,37 @@
         </ul>
     </nav>
     <div class="container">
-        <div class="section">Секція 1</div>
-        <div class="section">Секція 2</div>
-        <div class="section">Секція 3</div>
+        <div class="section s1">Секція 1</div>
+        <div class="section s2">Секція 2</div>
+        <div class="section s3">Секція 3</div>
     </div>
 
     <script>
-        let currentIndex = 0;
-        const sections = document.querySelectorAll('.section');
-        const totalSections = sections.length;
 
-        let startY = 0;
 
-        document.addEventListener('touchstart', (e) => {
-            startY = e.touches[0].clientY;
-        });
+    let startY = 0;
+    const section = document.querySelectorAll('.section');
+    const totalSections = section.length;
+    let currentIndex = 0;
 
-        document.addEventListener('touchend', (e) => {
-            let endY = e.changedTouches[0].clientY;
-            if (startY > endY + 50 && currentIndex < totalSections - 1) {
-                // Свайп вверх (перехід до наступного блоку)
-                currentIndex++;
-            } else if (startY < endY - 50 && currentIndex > 0) {
-                // Свайп вниз (перехід до попереднього блоку)
-                currentIndex--;
-            }
-            updateSections();
-        });
+    document.addEventListener('touchstart', (e) => {
+        startY = e.touches[0].clientY;
+    });
 
-        function updateSections() {
-            sections.forEach((section, index) => {
-                let offset = (index - currentIndex) * 100;
-                section.style.transform = `translateY(${offset}vh)`;
-            });
+    document.addEventListener('touchend', (e) => {
+        const endY = e.changedTouches[0].clientY;
+
+        // якщо пальцем провели вгору більше ніж на 50px
+        if (startY > endY + 50 && currentIndex < totalSections-1) {
+            section[currentIndex].style.transform = 'translateY(-100vh)';
+            currentIndex++;
+        }else if(startY < endY + 50 && currentIndex > 0){
+            section[currentIndex-1].style.transform = 'translateY(0vh)';
+            currentIndex--;
         }
+        console.log(currentIndex);
+    });
+
     </script>
 </body>
 
