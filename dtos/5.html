@@ -160,7 +160,7 @@
         const endX = e.changedTouches[0].clientX;
         const moreSection = document.querySelector(".moreSection");
         // якщо пальцем провели вгору більше ніж на 50px
-        if (startX > endX + 150) {
+        if (startX > endX + 70) {
             moreSection.style.left = '0px';
         }else if(startX < endX + 20){
             moreSection.style.left = '100vh';
