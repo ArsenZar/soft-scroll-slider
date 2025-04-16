@@ -96,6 +96,10 @@
             margin: 20px;
             box-sizing: border-box;
         }
+        .moreSection.is-open {
+            left: 0;
+        }
+
     </style>
 </head>
 
@@ -126,35 +130,53 @@
 
         let startY = 0;
         let startX = 0;
-        let isMoreSectionOpen = false;
 
         const section = document.querySelectorAll('.section');
         const totalSections = section.length;
         let currentIndex = 0;
 
         const moreSection = document.querySelector(".moreSection");
+        const container = document.querySelector('.container');
 
-        document.addEventListener('touchstart', (e) => {
+        moreSection.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        moreSection.addEventListener('touchend', (e) => {
+
+            const endX = e.changedTouches[0].clientX;
+            if(startX < endX - 70) {
+                moreSection.classList.remove('is-open');
+            };
+        });
+
+        container.addEventListener('touchstart', (e) => {
             startY = e.touches[0].clientY;
             startX = e.touches[0].clientX;
         });
 
-        document.addEventListener('touchend', (e) => {
+        container.addEventListener('touchend', (e) => {
             const endY = e.changedTouches[0].clientY;
 
             // якщо пальцем провели вгору більше ніж на 50px
-            if (!isMoreSectionOpen && startY > endY + 50 && currentIndex < totalSections - 1) {
+            if (startY > endY + 50 && currentIndex < totalSections - 1) {
                 section[currentIndex].style.transform = 'translateY(-100vh)';
                 section[currentIndex + 1].style.top = '0vh';
                 currentIndex++;
                 bgColor();
-            } else if (!isMoreSectionOpen && startY < endY - 50 && currentIndex > 0) {
+            } else if (startY < endY - 50 && currentIndex > 0) {
                 section[currentIndex - 1].style.transform = 'translateY(0vh)';
                 section[currentIndex].style.top = '20vh';
                 section[currentIndex].style.transition = '.9s';
                 currentIndex--;
                 bgColor();
-            }
+            };
+
+            const endX = e.changedTouches[0].clientX;
+            // якщо пальцем провели вгору більше ніж на 50px
+            if (startX > endX + 70) {
+                moreSection.classList.add('is-open');
+            };
         });
 
         function bgColor() {
@@ -168,18 +190,6 @@
                         document.querySelector("body").style.backgroundColor = "#638CB3";
                     }
         }
-
-        document.addEventListener('touchend', (e) => {
-            const endX = e.changedTouches[0].clientX;
-            // якщо пальцем провели вгору більше ніж на 50px
-            if (startX > endX + 70) {
-                moreSection.style.left = '0px';
-                isMoreSectionOpen = true;
-            } else if (startX < endX - 70) {
-                moreSection.style.left = '100vh';
-                isMoreSectionOpen = false;
-            };
-        });
 
 
     </script>
