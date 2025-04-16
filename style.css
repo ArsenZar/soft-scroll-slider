@@ -44,7 +44,7 @@ nav a {
 }
 ul .describe{
     font-size: 1.2vh;
-    line-height: 0.8;
+    line-height: 1;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 5px 5px 5px 10px;
     border-left: 1px solid rgb(133, 48, 48);
