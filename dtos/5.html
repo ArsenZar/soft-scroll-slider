@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Swipe Sections</title>
     <link rel="stylesheet" href="../style.css">
     <style>
@@ -89,7 +89,7 @@
         </ul>
     </nav>
     <div class="container">
-        <div class="section s1"></div>
+        <div class="section s1">Секція 1</div>
         <div class="section s2">Секція 2</div>
         <div class="section s3">Секція 3</div>
     </div>
@@ -98,6 +98,7 @@
 
 
     let startY = 0;
+    let startX = 0;
     const section = document.querySelectorAll('.section');
     const totalSections = section.length;
     let currentIndex = 0;
@@ -114,16 +115,32 @@
             section[currentIndex].style.transform = 'translateY(-100vh)';
             section[currentIndex+1].style.top = '0vh';
             currentIndex++;
-        }else if(startY < endY - 50 && currentIndex > 0){
+            bgColor();
+        }else if(startY < endY && currentIndex > 0){
             section[currentIndex-1].style.transform = 'translateY(0vh)';
             section[currentIndex].style.top = '20vh';
             section[currentIndex].style.transition = '.9s';
             currentIndex--;
+            bgColor();
         }
-        console.log(currentIndex);
     });
 
+    function bgColor(){
+        if (currentIndex == 0) {
+            document.querySelector("body").style.backgroundColor = "#00674F";
+        }else
+        if(currentIndex == 1){
+            document.querySelector("body").style.backgroundColor = "#919598";
+        }else
+        if(currentIndex == 2){
+            document.querySelector("body").style.backgroundColor = "#638CB3";
+        }
+    }
 
+    document.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        console.log(e);
+    });
 
     </script>
 </body>
