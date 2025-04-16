@@ -181,13 +181,16 @@
 
         function bgColor() {
             if (currentIndex == 0) {
-                document.querySelector("body").style.backgroundColor = "#00674F";
+                const colorBG = document.querySelector("body").style.backgroundColor = "#00674F";
+                document.querySelector('.moreSection').style.backgroundColor = colorBG;
             } else
                 if (currentIndex == 1) {
-                    document.querySelector("body").style.backgroundColor = "#919598";
+                    const colorBG = document.querySelector("body").style.backgroundColor = "#919598";
+                    document.querySelector('.moreSection').style.backgroundColor = colorBG;
                 } else
                     if (currentIndex == 2) {
-                        document.querySelector("body").style.backgroundColor = "#638CB3";
+                        const colorBG = document.querySelector("body").style.backgroundColor = "#638CB3";
+                        document.querySelector('.moreSection').style.backgroundColor = colorBG;
                     }
         }
 
