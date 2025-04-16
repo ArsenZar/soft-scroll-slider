@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Swipe Sections</title>
     <link rel="stylesheet" href="../style.css">
     <style>
@@ -30,12 +30,8 @@
         }
 
         .section {
-            height: calc(var(--vh, 1vh) * 100);
-        }
-
-
-        .section {
             width: 100vw;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -84,6 +80,16 @@
             top: 20vh;
             transition: .9s;
         }
+        .moreSection{
+            width: 100vh;
+            height: 100vh;
+            background-color: rebeccapurple;
+            position: fixed;
+            top: 0px;
+            left: 100vw;
+            z-index: 1000;
+            transition: .7s;
+        }
     </style>
 </head>
 
@@ -93,6 +99,9 @@
             <li><a href="../index.html">&#8962;</a></li>
         </ul>
     </nav>
+    <div class="moreSection">
+       
+    </div>
     <div class="container">
         <div class="section s1">Секція 1</div>
         <div class="section s2">Секція 2</div>
@@ -100,15 +109,6 @@
     </div>
 
     <script>
-
-    function updateViewportHeight() {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-
-    updateViewportHeight();
-    window.addEventListener('resize', updateViewportHeight);
-
 
 
     let startY = 0;
@@ -155,6 +155,18 @@
         startX = e.touches[0].clientX;
         console.log(e);
     });
+
+    document.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const moreSection = document.querySelector(".moreSection");
+        // якщо пальцем провели вгору більше ніж на 50px
+        if (startX > endX + 20) {
+            moreSection.style.left = '0px';
+        }else if(startX < endX + 20){
+            moreSection.style.left = '100vh';
+        };
+    });
+    
 
     </script>
 </body>
