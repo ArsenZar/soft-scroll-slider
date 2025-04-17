@@ -78,7 +78,9 @@
         .moreSection {
             width: 100vw;
             height: 100vh;
-            background-color: #00674F;
+            background-color: #00674f1f;
+            background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 50%, rgba(0, 0, 0, 0.50) 100%);
+            backdrop-filter: blur(5px);
             position: fixed;
             top: 0px;
             left: 100vw;
@@ -196,15 +198,15 @@
 
         function bgColor() {
             if (currentIndex == 0) {
-                const colorBG = document.querySelector("body").style.backgroundColor = "#00674F";
+                const colorBG = document.querySelector("body").style.backgroundColor = "#00674F1f";
                 document.querySelector('.moreSection').style.backgroundColor = colorBG;
             } else
                 if (currentIndex == 1) {
-                    const colorBG = document.querySelector("body").style.backgroundColor = "#919598";
+                    const colorBG = document.querySelector("body").style.backgroundColor = "#9195981f";
                     document.querySelector('.moreSection').style.backgroundColor = colorBG;
                 } else
                     if (currentIndex == 2) {
-                        const colorBG = document.querySelector("body").style.backgroundColor = "#638CB3";
+                        const colorBG = document.querySelector("body").style.backgroundColor = "#638CB31f";
                         document.querySelector('.moreSection').style.backgroundColor = colorBG;
                     }
         }

@@ -8,7 +8,6 @@
 }
 
 nav li {
-    list-style-type: none;
     background-color: rgba(0, 0, 0, 0.094);
     padding: 5px;
     border-radius: 50px;
@@ -30,7 +29,7 @@ nav a {
     text-decoration: none;
     color: black;
 }
-.list li{
+.list > li{
     list-style-type: none;
     margin: 10px;
 }
@@ -51,4 +50,9 @@ ul .describe{
     margin-top: -5px;
     margin-left: 15px;
     margin-bottom: 20px;
+}
+.showList{
+    margin: 5px 0;
+    list-style-type: circle;
+    padding-left: 10px;
 }
