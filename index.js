@@ -7,6 +7,12 @@ export default function softScrollSlider({ container, moreSection, colors, conte
     const moreSectionEl = document.querySelector(moreSection);
     const sections = containerEl.querySelectorAll('.section');
     const totalSections = sections.length;
+    let zValue = 100;
+
+    for (let i = 0; i < sections.length; i++){
+        sections[i].style.zIndex = zValue;
+        zValue--;
+    }
 
     if (!containerEl || !moreSectionEl || !sections.length) {
         console.error('Soft Scroll Slider: One or more elements not found.');
@@ -21,6 +27,7 @@ export default function softScrollSlider({ container, moreSection, colors, conte
     function currentSectionUpdate() {
         document.body.style.backgroundColor = colors[currentIndex] || "#ffffff";
         moreSectionEl.innerHTML = contents[currentIndex] || "";
+        moreSectionEl.style.zIndex = "1000";
     }
 
     function handleMoreSectionSwipe(e) {
