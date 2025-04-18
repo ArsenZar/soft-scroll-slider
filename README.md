@@ -9,6 +9,7 @@ Soft Scroll Slider — This is a simple JavaScript library for smooth swipe scro
 
 > ⚠️ The library is focused on mobile devices. A desktop version will be released later.
 
+### DEMO
 > You want to see how i create this lib stepByStep?
 > 
 > https://arsenzar.github.io/soft-scroll-slider/
