@@ -161,4 +161,12 @@ Stay tuned for updates and improvements!
 
 MIT © [ArsenZar](https://github.com/ArsenZar)
 
-```
+
+## A great idea for a startup. est. 2021.
+
+This is the story of how this library came about. 3-4 years ago, in the era of the emergence of endless ticks, I created a crude version of the slider. https://youtube.com/shorts/zjkiF1HckFc
+But then it worked by taking the value of the scrollbar position and if it was > 200px, the next block appeared, if > 400px ... and so on :)
+
+At that time, I was talking to various coffee shops, bloggers and other people to create their own site based on this concept, but unfortunately I heard refusals. After a while, I decided that I wanted to create my own startup based on this UI interface and call it ShareLink. It was supposed to be like Linktree and Clutch collaborated, only with a taste for style)
+
+The goal of the startup was to create pages of people who could talk on each screen about what they could be useful for, and all this was also supported by a rating. Here is the story of its appearance, I don't think anyone will be interested in it)
