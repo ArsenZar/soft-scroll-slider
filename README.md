@@ -13,8 +13,8 @@ Soft Scroll Slider — This is a simple JavaScript library for smooth swipe scro
 
 ## 🚀 Fast START
 
-```## 1. HTML
-
+## 1. HTML (index.html)
+```
 <div class="moreSection"></div>
 
 <div class="container">
@@ -22,9 +22,10 @@ Soft Scroll Slider — This is a simple JavaScript library for smooth swipe scro
   <div class="section">Section 2</div>
   <div class="section">Section 3</div>
 </div>
+```
 __________________________________________________________________________________________
-## 2. CSS - Minimum styles that must be present:
-
+## 2. CSS - Minimum styles that must be present (main.css)
+```
 body {
   overflow: hidden;
   transition: background-color 0.6s ease;
@@ -64,9 +65,10 @@ body {
 .moreSection.is-open {
   right: 0;
 }
+```
 __________________________________________________________________________________________
-# Initialization
-
+# Initialization 
+```
 import softScrollSlider from 'soft-scroll-slider';
 
 softScrollSlider({
@@ -79,3 +81,4 @@ softScrollSlider({
     2: '<h1>Screen 3</h1>'
   }
 });
+```
