@@ -89,3 +89,9 @@ softScrollSlider({
   }
 });
 ```
+
+Param | Type | Describe
+container | string | CSS selector for main container with sections
+moreSection | string | CSS selector for the right sidebar
+colors | array | An array of background colors for each section
+contents | object | Content that is inserted into .moreSection by index
