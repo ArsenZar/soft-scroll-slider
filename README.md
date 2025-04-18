@@ -19,6 +19,11 @@ Soft Scroll Slider — This is a simple JavaScript library for smooth swipe scro
 
 ---
 
+### NPM Start
+📦 Installation & Usage (npm)
+```bash
+npm install soft-scroll-slider
+```
 
 ## 🚀 Quick Start
 
