@@ -13,7 +13,7 @@ Soft Scroll Slider — This is a simple JavaScript library for smooth swipe scro
 
 ## 🚀 Fast START
 
-## 1. HTML
+```## 1. HTML
 
 <div class="moreSection"></div>
 
