@@ -1,0 +1,20 @@
+{
+  "name": "soft-scroll-slider",
+  "version": "1.0.0",
+  "description": "<h1>SOFT SCROLL SLIDER</h1> <p>Hi, this is my first library, but I believe it can make your projects more effective and interesting.</p> <p><i>If it helped you even a little, let me know, your feedback will be important.</i></p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArsenZar/soft-scroll-slider.git"
+  },
+  "keywords": [],
+  "author": "senya_zar <arsenzar@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArsenZar/soft-scroll-slider/issues"
+  },
+  "homepage": "https://github.com/ArsenZar/soft-scroll-slider#readme"
+}

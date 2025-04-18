@@ -83,7 +83,7 @@
         .moreSection {
             width: 100vw;
             height: 100vh;
-            background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 50%, rgba(0, 0, 0, 0.60) 100%);
+            background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 50%, rgba(0, 0, 0, 0.70) 100%);
             backdrop-filter: blur(5px);
             position: fixed;
             top: 0px;
@@ -187,7 +187,7 @@
         moreSection.addEventListener('touchend', (e) => {
 
             const endX = e.changedTouches[0].clientX;
-            if(startX < endX - 70) {
+            if (startX < endX - 70) {
                 moreSection.classList.remove('is-open');
             };
         });
@@ -226,15 +226,13 @@
             1: `<img src="../images/p2.png"><h1>Porsche 911 GT3 RS mit Manthey Kit</h1><img src="../images/porsh.jpeg"><p>Що відразу впадає в око: зникло заднє скло. Замість нього Manthey встановлює на 25 відсотків легшу пластину з вуглецевого волокна, на яку встановлюється акулячий плавник, також виготовлений з вуглепластику, який — похідний від автомобіля-переможця чемпіонату світу зі спортивних автомобілів 963 — підвищує стійкість на поворотах. У поєднанні з шістьма додатковими ребрами даху він також направляє тепле вихлопне повітря з переднього охолоджувача назовні, забезпечуючи таким чином більш холодне технологічне повітря ззаду навіть за екстремальних умов експлуатації.</p><img src="../images/porsch2.jpg"><img src="../images/porsch3.jpg"><img src="../images/porsch4.jpg">`,
             2: `<img src="../images/p3.png"><h1>Porsche 911 GT3 RS mit Manthey Kit</h1><img src="../images/porsh.jpeg"><p>Що відразу впадає в око: зникло заднє скло. Замість нього Manthey встановлює на 25 відсотків легшу пластину з вуглецевого волокна, на яку встановлюється акулячий плавник, також виготовлений з вуглепластику, який — похідний від автомобіля-переможця чемпіонату світу зі спортивних автомобілів 963 — підвищує стійкість на поворотах. У поєднанні з шістьма додатковими ребрами даху він також направляє тепле вихлопне повітря з переднього охолоджувача назовні, забезпечуючи таким чином більш холодне технологічне повітря ззаду навіть за екстремальних умов експлуатації.</p><img src="../images/porsch2.jpg"><img src="../images/porsch3.jpg"><img src="../images/porsch4.jpg">`
         };
-        const color = ["#00674F", "#919598", "#638CB3"]; 
+        const color = ["#00674F", "#919598", "#638CB3"];
 
         function currentSectionUpdate() {
             document.querySelector("body").style.backgroundColor = color[currentIndex];
             const moreSection = document.querySelector(".moreSection");
             moreSection.innerHTML = sectionContent[currentIndex];
         }
-
-
     </script>
 </body>
 
