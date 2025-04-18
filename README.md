@@ -37,50 +37,65 @@ npm install soft-scroll-slider
   <div class="section">Section 2</div>
   <div class="section">Section 3</div>
 </div>
+
+<script type="module" src="./main.js">
 ```
 
 ### 2. Required CSS (Minimum Styling)
 
 ```css
-body {
-  overflow: hidden;
-  transition: background-color 0.6s ease;
-}
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
+        body {
+            font-family: sans-serif;
+            overflow: hidden;
+            transition: background-color 0.6s ease;
+        }
 
-.section {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 100vh;
-  transition: all 0.6s ease;
-}
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-.section:first-child {
-  top: 0;
-}
+        .section {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 20vh;
+            transition: all 0.6s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: white;
+        }
 
-.moreSection {
-  position: fixed;
-  right: -100%;
-  top: 0;
-  width: 80%;
-  height: 100%;
-  background: white;
-  transition: right 0.4s ease;
-  overflow-y: auto;
-  z-index: 100;
-}
+        .section:first-child {
+            top: 0;
+        }
 
-.moreSection.is-open {
-  right: 0;
-}
+        .moreSection {
+            position: fixed;
+            right: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            transition: right 0.4s ease;
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .moreSection.is-open {
+            right: 0;
+        }
 ```
 
 ### 3. JavaScript Initialization
