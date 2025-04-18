@@ -16,12 +16,15 @@ Soft Scroll Slider — This is a simple JavaScript library for smooth swipe scro
 > ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 > 
 > Here i describe all updates, u can use this
+
 ---
 
-## 🚀 Fast START
 
-## 1. HTML (index.html)
-```
+## 🚀 Quick Start
+
+### 1. Basic HTML Structure
+
+```html
 <div class="moreSection"></div>
 
 <div class="container">
@@ -30,9 +33,10 @@ Soft Scroll Slider — This is a simple JavaScript library for smooth swipe scro
   <div class="section">Section 3</div>
 </div>
 ```
-__________________________________________________________________________________________
-## 2. CSS - Minimum styles that must be present (main.css)
-```
+
+### 2. Required CSS (Minimum Styling)
+
+```css
 body {
   overflow: hidden;
   transition: background-color 0.6s ease;
@@ -73,25 +77,67 @@ body {
   right: 0;
 }
 ```
-__________________________________________________________________________________________
-# Initialization 
+
+### 3. JavaScript Initialization
+
+If you're using it as a simple script:
+
+```html
+<script src="index.js"></script>
 ```
+
+---
+
+## 📦 Installation (coming soon via npm)
+
+```bash
+npm install soft-scroll-slider
+```
+
+Then in your JavaScript:
+
+```js
 import softScrollSlider from 'soft-scroll-slider';
 
 softScrollSlider({
   container: '.container',
   moreSection: '.moreSection',
-  colors: ['#00674F', '#919598', '#638CB3'],
+  colors: ['#color1', '#color2', '#color3'],
   contents: {
-    0: '<h1>Screen 1</h1>',
-    1: '<h1>Screen 2</h1>',
-    2: '<h1>Screen 3</h1>'
+    0: '<p>HTML for section 0</p>',
+    1: '<p>HTML for section 1</p>',
+    2: '<p>HTML for section 2</p>',
   }
 });
 ```
 
-Param | Type | Describe
-container | string | CSS selector for main container with sections
-moreSection | string | CSS selector for the right sidebar
-colors | array | An array of background colors for each section
-contents | object | Content that is inserted into .moreSection by index
+---
+
+## 🧠 How It Works
+
+- Vertical swipes scroll between sections.
+- Horizontal swipe right opens the `.moreSection`.
+- Horizontal swipe left closes the `.moreSection`.
+- Background color and content are dynamically updated based on the active section index.
+
+---
+
+## 🧪 Example
+
+To see a working version, open `example.html` in your browser.
+
+---
+
+## 🙌 Feedback
+
+This is my first JavaScript library. If it helped you, even a little — let me know!  
+Any feedback or contribution is highly appreciated.  
+Stay tuned for updates and improvements!
+
+---
+
+## 🔗 License
+
+MIT © [ArsenZar](https://github.com/ArsenZar)
+
+```
