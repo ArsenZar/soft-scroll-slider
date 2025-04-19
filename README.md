@@ -18,9 +18,9 @@ Soft Scroll Slider — This is a simple JavaScript library for smooth swipe scro
 > 
 > Here i describe all updates, u can use this
 
----
-### WHAT THIS LIB CAN DO?
+
 <img src="./images/demo.gif" alt="Slider Demo" width="300" />
+
 ---
 
 ### NPM Start
