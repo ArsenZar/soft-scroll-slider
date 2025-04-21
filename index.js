@@ -37,7 +37,6 @@ export default function softScrollSlider({ container, moreSection, colors, conte
         }
     }
 
-    
     function handleContainerSwipe(e) {
         const endY = e.changedTouches[0].clientY;
         const endX = e.changedTouches[0].clientX;
